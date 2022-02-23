@@ -22,10 +22,6 @@ router.post("/register", async (req,res)=>{
 });
 
 // Login auth route for security
-
-//TODO Server crashes when incorect info is put in.  (can't set header after they are sent to the client)
-//not sure if this is just a postman issue.  It seems to crash due to res.status().json("");  res.status removed for now
-
 router.post('/login', async (req, res) => {
   try{
       const user = await User.findOne(
